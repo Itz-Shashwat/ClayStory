@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClayStory — Handmade Clay Creations Made With Love</title>
+  <meta name="description"
+    content="ClayStory crafts handmade clay miniatures, keychains, and trays with love. Custom orders welcome!" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="clay_mascot.png" type="image/png" />
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-clay"></div>
+    <p>Shaping something beautiful…</p>
+  </div>
+
+  <!-- CURSOR TRAIL (desktop only) -->
+  <canvas id="cursorCanvas"></canvas>
+
+  <!-- FLOATING BACKGROUND BLOBS -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-brand">
+      <img src="clay_mascot.png" alt="ClayStory mascot" />
+      <span>ClayStory</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#miniatures">Miniatures</a></li>
+      <li><a href="#keychains">Keychains</a></li>
+      <li><a href="#trays">Trays</a></li>
+      <li><a href="#custom-orders">Custom Orders</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-social">
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank" rel="noopener"
+        aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/?text=Hi%2C%20I%27m%20interested%20in%20ClayStory%20products!" target="_blank"
+        rel="noopener" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="home">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+    <div class="hero-shape hero-shape-4"></div>
+    <div class="hero-shape hero-shape-5"></div>
+
+    <div class="hero-content reveal">
+      <div class="hero-badge">🏺 Handcrafted with heart</div>
+      <h1>Handmade Clay Creations <br><span class="highlight">Made With Love</span></h1>
+      <p>Custom miniatures, trays, and keychains crafted by hand — each piece tells a tiny story.</p>
+      <div class="hero-buttons">
+        <a href="#miniatures" class="btn btn-primary">
+          <i class="fa-solid fa-eye"></i> View Creations
+        </a>
+        <a href="https://wa.me/?text=Hi%2C%20I%27m%20interested%20in%20ClayStory%20products!" target="_blank"
+          class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <img src="hero_illustration.png" alt="Clay art illustration" class="hero-image" />
+  </section>
+
+  <!-- ==================== BEHIND THE SCENES — VIDEO REEL ==================== -->
+  <section class="section video-reel-section" id="behind-the-scenes">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-film"></i> Behind the Scenes</div>
+      <h2>Watch the Magic Happen</h2>
+      <p>From a lump of clay to a tiny masterpiece — see how every piece comes alive</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="video-reel reveal">
+      <div class="video-reel-track" id="videoReelTrack">
+        <div class="video-reel-item">
+          <video
+            src="Videos/AQMbwMiygHOOhsvdWOJmwKU9eUMdNPJZW-ZKfrt59-T4yahve6Bw5AI_Ub6_Y5IwyagjYe-AsRIsP9J21flum_ef.mp4"
+            muted loop playsinline preload="metadata" class="reel-video"></video>
+          <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-caption">Sculpting process ✨</div>
+        </div>
+        <div class="video-reel-item">
+          <video
+            src="Videos/AQNhg8Nxk02vTKt_vOeMmX048dzhOqXpg3bwSaKQNUMB0cuPJOlFMlb512JLq67cOet9ViX5dEX1nPhhEjZ7s9aNg6taWOM3b84WjAE.mp4"
+            muted loop playsinline preload="metadata" class="reel-video"></video>
+          <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-caption">Shaping details 🎨</div>
+        </div>
+        <div class="video-reel-item">
+          <video
+            src="Videos/AQO135c9wHacQHMy8DOr2n2yT_o9lQ2j0Z6VYeO-bGFLXUYlS0c_hkje6JIqaBZu4G0qt-PdRFzVZqI_Ez9UJS75.mp4"
+            muted loop playsinline preload="metadata" class="reel-video"></video>
+          <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-caption">Adding the final touch 🌸</div>
+        </div>
+        <div class="video-reel-item">
+          <video
+            src="Videos/AQPaYnNlZ2BISEgJrX0dss29GUbUmoAoOLbX_rQtJk6GkPpIWg0KWIV0ZeiRSvZsBqVgvH0vhqgz5TD12dYRQ4DJBYBrWmIy-pHK2xw.mp4"
+            muted loop playsinline preload="metadata" class="reel-video"></video>
+          <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="video-caption">Art in the making 🏺</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MINIATURES — GALLERY ==================== -->
+  <section class="section" id="miniatures">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-shapes"></i> Collection</div>
+      <h2>Clay Miniatures</h2>
+      <p>Tiny handmade sculptures full of character and charm</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="masonry-grid reveal">
+      <div class="masonry-item" data-name="Miniature Scene" data-desc="A tiny world sculpted entirely by hand">
+        <img src="Miniature/240728578_1273948206355999_6176781377076992216_n.jpg" alt="Clay miniature" loading="lazy" />
+        <div class="masonry-overlay">
+          <h4>Miniature Scene</h4>
+          <p>A tiny world sculpted entirely by hand</p>
+        </div>
+      </div>
+      <div class="masonry-item" data-name="Character Figurine" data-desc="Unique collectible piece with personality">
+        <img src="Miniature/240805388_4350512118380875_8556170973451629376_n.jpg" alt="Clay miniature" loading="lazy" />
+        <div class="masonry-overlay">
+          <h4>Character Figurine</h4>
+          <p>Unique collectible with personality</p>
+        </div>
+      </div>
+      <div class="masonry-item" data-name="Cute Clay Set" data-desc="A perfect little gift for someone special">
+        <img src="Miniature/441502320_465725122571025_4999120553344178628_n.webp" alt="Clay miniature" loading="lazy" />
+        <div class="masonry-overlay">
+          <h4>Cute Clay Set</h4>
+          <p>A perfect little gift</p>
+        </div>
+      </div>
+      <div class="masonry-item" data-name="Decorative Mini" data-desc="Tiny joy for your shelf or desk">
+        <img src="Miniature/650943251_18081625715056970_3205936758732006108_n.jpg" alt="Clay miniature"
+          loading="lazy" />
+        <div class="masonry-overlay">
+          <h4>Decorative Mini</h4>
+          <p>Tiny joy for your shelf</p>
+        </div>
+      </div>
+      <div class="masonry-item" data-name="Handmade Sculpture" data-desc="One-of-a-kind creation, never repeated">
+        <img src="Miniature/650980571_18094783568021553_3489569583276386354_n.jpg" alt="Clay miniature"
+          loading="lazy" />
+        <div class="masonry-overlay">
+          <h4>Handmade Sculpture</h4>
+          <p>One-of-a-kind creation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KEYCHAINS — PRODUCT CARDS ==================== -->
+  <section class="section" id="keychains"
+    style="background: linear-gradient(180deg, transparent, rgba(232,213,245,0.12), transparent);">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-key"></i> Accessories</div>
+      <h2>Clay Keychains</h2>
+      <p>Carry a little piece of art everywhere you go</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="product-grid reveal">
+      <div class="product-card" data-name="Floral Keychain" data-desc="Delicate clay flowers on a cute little chain">
+        <div class="product-card-image">
+          <img src="KeyChain/436150502_1136107704310755_8738495786846192587_n.webp" alt="Clay keychain"
+            loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Floral Keychain</h4>
+          <p>Delicate clay flowers on a cute little chain</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Charm Keychain" data-desc="Adorable clay charms in pastel shades">
+        <div class="product-card-image">
+          <img src="KeyChain/436283151_7705886812807888_8664373386359770564_n.webp" alt="Clay keychain"
+            loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Charm Keychain</h4>
+          <p>Adorable clay charms in pastel shades</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Mini Character Keychain"
+        data-desc="Tiny hand-sculpted character on your keys">
+        <div class="product-card-image">
+          <img src="KeyChain/436333739_970619728045103_1530681609139512766_n.webp" alt="Clay keychain" loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Mini Character Keychain</h4>
+          <p>Tiny hand-sculpted character on your keys</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Artsy Clay Ring" data-desc="A statement piece molded with care">
+        <div class="product-card-image">
+          <img src="KeyChain/439080237_1278256956470439_6153976301457166223_n.webp" alt="Clay keychain"
+            loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Artsy Clay Ring</h4>
+          <p>A statement piece molded with care</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Nature Keychain" data-desc="Inspired by the beauty of nature">
+        <div class="product-card-image">
+          <img src="KeyChain/442492710_430669993158464_125844912899098262_n.webp" alt="Clay keychain" loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Nature Keychain</h4>
+          <p>Inspired by the beauty of nature</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Pastel Bloom Keychain" data-desc="Soft pastels shaped into tiny wonders">
+        <div class="product-card-image">
+          <img src="KeyChain/603103362_18069865910620996_2621418438929127963_n.webp" alt="Clay keychain"
+            loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Pastel Bloom Keychain</h4>
+          <p>Soft pastels shaped into tiny wonders</p>
+        </div>
+      </div>
+      <div class="product-card" data-name="Custom Charm" data-desc="Made to match your personality">
+        <div class="product-card-image">
+          <img src="KeyChain/649217558_18056198939442704_5962110241294324903_n.jpg" alt="Clay keychain"
+            loading="lazy" />
+          <span class="product-card-badge">Handmade</span>
+        </div>
+        <div class="product-card-body">
+          <h4>Custom Charm</h4>
+          <p>Made to match your personality</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRAYS — CAROUSEL ==================== -->
+  <section class="section" id="trays">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-palette"></i> Home Decor</div>
+      <h2>Clay Trays</h2>
+      <p>Beautiful handcrafted trays to brighten your space</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track" id="trayCarousel">
+        <div class="carousel-card" data-name="Floral Trinket Tray" data-desc="A dainty dish for your tiny treasures">
+          <div class="carousel-card-image"><img src="Tray/227922797_394167675401063_5412206649405402909_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Floral Trinket Tray</h4>
+            <p>A dainty dish for your tiny treasures</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Petal Ring Dish" data-desc="Sculpted petals to hold what matters">
+          <div class="carousel-card-image"><img src="Tray/228316419_536274444353258_2058229502179121893_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Petal Ring Dish</h4>
+            <p>Sculpted petals to hold what matters</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Blush Organizer" data-desc="Soft shapes meet practical beauty">
+          <div class="carousel-card-image"><img src="Tray/228446290_794985111190382_3663670705195747477_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Blush Organizer</h4>
+            <p>Soft shapes meet practical beauty</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Earthy Jewelry Tray" data-desc="Rustic charm handmade for you">
+          <div class="carousel-card-image"><img src="Tray/257895702_480092939962357_2788889324091670566_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Earthy Jewelry Tray</h4>
+            <p>Rustic charm handmade for you</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Ceramic Catch-All" data-desc="Keep your essentials beautifully organized">
+          <div class="carousel-card-image"><img src="Tray/257950386_390107152814375_7544713932278080758_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Ceramic Catch-All</h4>
+            <p>Keep your essentials organized</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Artistic Clay Plate" data-desc="Where art meets everyday decor">
+          <div class="carousel-card-image"><img src="Tray/424964388_1225678004864471_1170525765900303569_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Artistic Clay Plate</h4>
+            <p>Where art meets everyday decor</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Wave Edge Tray" data-desc="Organic wavy edges for a unique touch">
+          <div class="carousel-card-image"><img src="Tray/426265476_460440869647648_2860128949210570591_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Wave Edge Tray</h4>
+            <p>Organic wavy edges for a unique touch</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Mini Accent Dish" data-desc="Perfect tiny accent for any surface">
+          <div class="carousel-card-image"><img src="Tray/426483172_1374557636501832_7668192546918704815_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Mini Accent Dish</h4>
+            <p>Perfect tiny accent for any surface</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Pastel Serving Tray" data-desc="Serve with style and a splash of color">
+          <div class="carousel-card-image"><img src="Tray/427642365_931736201508058_190464189931166508_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Pastel Serving Tray</h4>
+            <p>Serve with style and a splash of color</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Sculpted Leaf Plate" data-desc="Nature-inspired handmade platter">
+          <div class="carousel-card-image"><img src="Tray/428480188_1186791642294651_8860653232608513647_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Sculpted Leaf Plate</h4>
+            <p>Nature-inspired handmade platter</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Boho Clay Bowl" data-desc="A free-spirited piece for your home">
+          <div class="carousel-card-image"><img src="Tray/429172859_715406294033750_2025272940445181298_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Boho Clay Bowl</h4>
+            <p>A free-spirited piece for your home</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Marble Effect Tray" data-desc="Swirled clay with an elegant finish">
+          <div class="carousel-card-image"><img src="Tray/435291508_372449602438486_2181152743560010675_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Marble Effect Tray</h4>
+            <p>Swirled clay with an elegant finish</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Garden Party Dish" data-desc="Blooming details on a handmade tray">
+          <div class="carousel-card-image"><img src="Tray/435303377_950424593292341_4833998325793530560_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Garden Party Dish</h4>
+            <p>Blooming details on a handmade tray</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Sunset Clay Tray" data-desc="Warm tones blended into a cozy piece">
+          <div class="carousel-card-image"><img src="Tray/621249083_18079130846253765_5632449437881052021_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Sunset Clay Tray</h4>
+            <p>Warm tones blended into a cozy piece</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Jewel Holder" data-desc="Made to cradle your precious things">
+          <div class="carousel-card-image"><img src="Tray/645455013_17947756551115710_4888194793458081980_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Jewel Holder</h4>
+            <p>Made to cradle your precious things</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Dreamy Trinket Plate" data-desc="Soft pastels for dreamy decor vibes">
+          <div class="carousel-card-image"><img src="Tray/650054876_18107696236833329_1486000036922415207_n.jpg"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Dreamy Trinket Plate</h4>
+            <p>Soft pastels for dreamy decor vibes</p>
+          </div>
+        </div>
+        <div class="carousel-card" data-name="Artisan Coaster Tray" data-desc="A cozy touch for your coffee corner">
+          <div class="carousel-card-image"><img src="Tray/651006912_18007957409851932_878188745272993713_n.webp"
+              alt="Clay tray" loading="lazy" /></div>
+          <div class="carousel-card-body">
+            <h4>Artisan Coaster Tray</h4>
+            <p>A cozy touch for your coffee corner</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous"><i
+            class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next"><i
+            class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE ARTIST'S STORY ==================== -->
+  <section class="section artist-story-section" id="our-story">
+    <div class="artist-story reveal">
+      <div class="artist-story-visual">
+        <div class="artist-polaroid artist-polaroid-1">
+          <img src="Tray/435303377_950424593292341_4833998325793530560_n.webp" alt="Clay work" />
+          <span>🌸 Garden tray</span>
+        </div>
+        <div class="artist-polaroid artist-polaroid-2">
+          <img src="Miniature/441502320_465725122571025_4999120553344178628_n.webp" alt="Clay set" />
+          <span>🌿 Miniature set</span>
+        </div>
+        <div class="artist-polaroid artist-polaroid-3">
+          <img src="KeyChain/439080237_1278256956470439_6153976301457166223_n.webp" alt="Keychain" />
+          <span>🔑 Clay charm</span>
+        </div>
+      </div>
+      <div class="artist-story-text">
+        <div class="section-tag"><i class="fa-solid fa-feather"></i> Our Story</div>
+        <h2>A Tiny Studio,<br>Big Dreams</h2>
+        <p>ClayStory started at a small desk with a pack of clay and a lot of imagination. Every piece you see here is
+          hand-shaped, painted, and finished with care — no moulds, no machines, just hands and heart.</p>
+        <p>We believe the best gifts are the ones made with love. That's why every order is treated as a personal
+          creation — whether it's a miniature of your pet, a tray for your jewellery, or a keychain that makes someone
+          smile.</p>
+        <div class="artist-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="500">0</span>+
+            <span class="stat-label">Creations Made</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="300">0</span>+
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="100">0</span>%
+            <span class="stat-label">Handmade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS MARQUEE ==================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-header reveal" style="max-width:1200px; margin:0 auto; padding:0 40px;">
+      <div class="section-tag"><i class="fa-solid fa-heart"></i> Love Letters</div>
+      <h2>What People Say</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The miniature of my cat was SO perfect! I literally cried when I opened it. 🥺"</p>
+          <span class="testimonial-author">— Ananya, Mumbai</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Ordered a custom tray for my bestie's birthday. She has NOT stopped talking about it!"</p>
+          <span class="testimonial-author">— Riya, Delhi</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The keychains are adorable. I keep ordering more because they make the cutest gifts 🎁"</p>
+          <span class="testimonial-author">— Prerna, Bangalore</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"I gifted a custom couple miniature. It's the most thoughtful gift I've ever given. 💕"</p>
+          <span class="testimonial-author">— Sneha, Pune</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Beautiful packaging, stunning quality. You can feel the love in every piece."</p>
+          <span class="testimonial-author">— Kavya, Jaipur</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The resin tray is my favourite thing on my desk. It's art! Can't stop staring at it. ✨"</p>
+          <span class="testimonial-author">— Meera, Hyderabad</span>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The miniature of my cat was SO perfect! I literally cried when I opened it. 🥺"</p>
+          <span class="testimonial-author">— Ananya, Mumbai</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Ordered a custom tray for my bestie's birthday. She has NOT stopped talking about it!"</p>
+          <span class="testimonial-author">— Riya, Delhi</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The keychains are adorable. I keep ordering more because they make the cutest gifts 🎁"</p>
+          <span class="testimonial-author">— Prerna, Bangalore</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"I gifted a custom couple miniature. It's the most thoughtful gift I've ever given. 💕"</p>
+          <span class="testimonial-author">— Sneha, Pune</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Beautiful packaging, stunning quality. You can feel the love in every piece."</p>
+          <span class="testimonial-author">— Kavya, Jaipur</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"The resin tray is my favourite thing on my desk. It's art! Can't stop staring at it. ✨"</p>
+          <span class="testimonial-author">— Meera, Hyderabad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INSTAGRAM ==================== -->
+  <div class="instagram-section reveal" id="instagram">
+    <div class="section-tag" style="justify-content:center; margin-bottom:8px;">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </div>
+    <div class="instagram-handle">Follow us <span>@_claystory_</span></div>
+    <p style="color:var(--text-mid); max-width:420px; margin:0 auto 24px;">See our latest creations, behind-the-scenes,
+      and customer favourites on Instagram.</p>
+
+    <div class="instagram-grid">
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Tray/435303377_950424593292341_4833998325793530560_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="KeyChain/436150502_1136107704310755_8738495786846192587_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Miniature/441502320_465725122571025_4999120553344178628_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="KeyChain/439080237_1278256956470439_6153976301457166223_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Tray/428480188_1186791642294651_8860653232608513647_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="KeyChain/603103362_18069865910620996_2621418438929127963_n.webp" alt="Instagram post"
+          loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Tray/427642365_931736201508058_190464189931166508_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Miniature/650980571_18094783568021553_3489569583276386354_n.jpg" alt="Instagram post"
+          loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        class="instagram-grid-item">
+        <img src="Tray/429172859_715406294033750_2025272940445181298_n.webp" alt="Instagram post" loading="lazy" />
+      </a>
+    </div>
+
+    <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+      class="btn btn-instagram" style="margin-top:24px;">
+      <i class="fa-brands fa-instagram"></i> Follow on Instagram
+    </a>
+  </div>
+
+  <!-- ==================== CUSTOM ORDERS ==================== -->
+  <section class="section" id="custom-orders">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Made for You</div>
+      <h2>Custom Orders</h2>
+      <p>Dream it, describe it — we'll sculpt it for you</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="custom-orders-wrapper reveal">
+      <div class="custom-orders-info">
+        <h3>Every piece is shaped by hand, just for you</h3>
+        <p>
+          At ClayStory, every creation starts as a ball of clay and a spark of imagination.
+          Whether it's a miniature version of your pet, a custom keychain for a gift,
+          or a decorative tray with your favourite colours — we bring your ideas to life.
+        </p>
+        <ul class="custom-features">
+          <li>Fully customizable designs</li>
+          <li>Handmade with love and care</li>
+          <li>Perfect for gifts and keepsakes</li>
+          <li>Choose your own colours and themes</li>
+          <li>Delivered safely and beautifully packaged</li>
+        </ul>
+        <a href="https://wa.me/?text=Hi%2C%20I%27d%20like%20to%20place%20a%20custom%20order%20with%20ClayStory!"
+          target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+
+      <form class="order-form" id="customOrderForm">
+        <div class="form-group">
+          <label for="orderName">Your Name</label>
+          <input type="text" id="orderName" placeholder="e.g. Priya" required />
+        </div>
+        <div class="form-group">
+          <label for="orderEmail">Email</label>
+          <input type="email" id="orderEmail" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="orderType">Product Type</label>
+          <select id="orderType" required>
+            <option value="" disabled selected>Choose a type…</option>
+            <option value="Miniature">Miniature</option>
+            <option value="Tray">Tray</option>
+            <option value="Keychain">Keychain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="orderIdea">Your Custom Idea</label>
+          <textarea id="orderIdea" placeholder="Describe your dream creation…" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="orderImage">Reference Image (optional)</label>
+          <input type="file" id="orderImage" accept="image/*" />
+        </div>
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Send Request
+          </button>
+          <a href="https://wa.me/?text=Hi%2C%20I%27d%20like%20to%20place%20a%20custom%20order%20with%20ClayStory!"
+            target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section contact-section" id="contact">
+    <div class="reveal">
+      <div class="section-tag"><i class="fa-solid fa-heart"></i> Get in Touch</div>
+      <h2 class="contact-message">"Have an idea for a clay creation? Let's make it together."</h2>
+      <p class="contact-sub">We'd love to hear from you — reach out through any of these channels!</p>
+
+      <div class="contact-buttons">
+        <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+          class="btn btn-instagram">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/?text=Hi%20ClayStory!" target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h3>💌 Send us a message</h3>
+        <div class="form-group">
+          <label for="contactName">Name</label>
+          <input type="text" id="contactName" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" placeholder="Tell us about your idea…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-brand">🏺 ClayStory</div>
+    <p>Handmade with love, one tiny creation at a time.</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/_claystory_?igsh=MWg1NXBnaTRwdGgzdg%3D%3D" target="_blank"
+        aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/?text=Hi%20ClayStory!" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-info">
+        <h3 id="lightboxName"></h3>
+        <p id="lightboxDesc"></p>
+        <a id="lightboxWa" href="#" target="_blank" class="btn btn-whatsapp btn-sm">
+          <i class="fa-brands fa-whatsapp"></i> I love this — let's chat!
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY WHATSAPP BUTTON -->
+  <a href="https://wa.me/?text=Hi%2C%20I%27m%20interested%20in%20ClayStory%20products!" target="_blank"
+    class="sticky-whatsapp" id="stickyWa">
+    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+  </a>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
